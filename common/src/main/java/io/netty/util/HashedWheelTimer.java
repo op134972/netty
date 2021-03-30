@@ -745,6 +745,7 @@ public class HashedWheelTimer implements Timer {
                     next = remove(timeout);
                     if (timeout.deadline <= deadline) {
                         timeout.expire();
+
                     } else {
                         // The timeout was placed into a wrong slot. This should never happen.
                         throw new IllegalStateException(String.format(
